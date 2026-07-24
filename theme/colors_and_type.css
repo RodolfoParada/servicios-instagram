@@ -1,0 +1,262 @@
+/* =============================================================
+   Reparadores — Design Tokens
+   Source of truth: brand-manual.md v1.0 (2026)
+   Type: Inter (loaded from local /fonts directory)
+   ============================================================= */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype-variations"),
+       url("fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype");
+  font-variation-settings: "opsz" 18;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/Inter-Italic-VariableFont_opsz_wght.ttf") format("truetype-variations"),
+       url("fonts/Inter-Italic-VariableFont_opsz_wght.ttf") format("truetype");
+  font-variation-settings: "opsz" 18;
+}
+/* Static fallbacks for browsers without variable-font support */
+@font-face {
+  font-family: "Inter Static";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter Static";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter Static";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+:root {
+  /* ---------- BRAND ----------------------------------------- */
+  --brand-purple:        #6727F0;   /* tecnología, liderazgo  */
+  --brand-purple-shade:  #3F1A99;   /* hover / active         */
+  --brand-orange:        #FD8B1F;   /* CTAs, calidez          */
+  --brand-orange-shade:  #C86413;   /* hover                  */
+  --brand-green:         #00C462;   /* impacto positivo (ESG) */
+  --brand-cream:         #FEFCF9;   /* fondo principal        */
+  --brand-ink:           #402E32;   /* texto principal        */
+
+  /* ---------- NEUTRAL SCALE -------------------------------- */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #FEFCF9;   /* cream / background           */
+  --neutral-100:  #F7F4F0;   /* subtle surface               */
+  --neutral-200:  #EFEAE4;
+  --neutral-300:  #DFE0DF;   /* manual: --border             */
+  --neutral-400:  #B8B5B0;
+  --neutral-500:  #8A8580;
+  --neutral-600:  #6B645F;
+  --neutral-700:  #4F4640;
+  --neutral-800:  #402E32;   /* manual: --foreground         */
+  --neutral-900:  #281C1F;
+  --neutral-950:  #15090C;
+
+  /* ---------- PURPLE SCALE --------------------------------- */
+  --purple-50:    #F2EBFE;
+  --purple-100:   #E5D6FD;
+  --purple-200:   #C9ADFB;
+  --purple-300:   #AC83F8;
+  --purple-400:   #8F5AF6;
+  --purple-500:   #6727F0;   /* primary                       */
+  --purple-600:   #5320C0;
+  --purple-700:   #3F1A99;   /* primary-shade / pressed       */
+  --purple-800:   #2A1166;
+  --purple-900:   #160933;
+
+  /* ---------- ORANGE SCALE --------------------------------- */
+  --orange-50:    #FFF3E5;
+  --orange-100:   #FFE3C2;
+  --orange-200:   #FEC78A;
+  --orange-300:   #FDAB52;
+  --orange-400:   #FD9A36;
+  --orange-500:   #FD8B1F;   /* secondary                     */
+  --orange-600:   #E27613;
+  --orange-700:   #C86413;   /* secondary-shade               */
+  --orange-800:   #8C440B;
+  --orange-900:   #4E2606;
+
+  /* ---------- GREEN SCALE (Impacto / Empresa B) ------------ */
+  --green-50:    #E2FBEF;
+  --green-100:   #B6F4D4;
+  --green-200:   #76E8AC;
+  --green-300:   #36DC83;
+  --green-400:   #00C462;
+  --green-500:   #00A453;
+  --green-600:   #008442;
+  --green-700:   #006532;
+  --green-800:   #004621;
+
+  /* ---------- SEMANTIC STATES ------------------------------ */
+  --success:      #00C462;
+  --success-bg:   #E2FBEF;
+  --warning:      #FD8B1F;
+  --warning-bg:   #FFF3E5;
+  --danger:       #D14343;
+  --danger-bg:    #FBE7E7;
+  --info:         #6727F0;
+  --info-bg:      #F2EBFE;
+
+  /* ---------- SEMANTIC ALIASES (brand-manual tokens) ------- */
+  --background:        var(--brand-cream);
+  --foreground:        var(--brand-ink);
+  --primary:           var(--brand-purple);
+  --primary-shade:     var(--brand-purple-shade);
+  --on-primary:        #FFFFFF;
+  --secondary:         var(--brand-orange);
+  --secondary-shade:   var(--brand-orange-shade);
+  --on-secondary:      #FFFFFF;
+  --accent:            var(--brand-green);
+  --impact:            var(--brand-green);
+  --border:            var(--neutral-300);
+  --muted:             var(--neutral-100);
+  --muted-foreground:  var(--neutral-600);
+
+  /* surface layering — no-line rule: depth via tonal shift */
+  --surface-0:         #FFFFFF;
+  --surface-1:         var(--neutral-50);
+  --surface-2:         var(--neutral-100);
+  --surface-3:         var(--neutral-200);
+  --surface-inset:     #FAF6F1;
+
+  /* ---------- TYPOGRAPHY ----------------------------------- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* type scale — brand-manual.md §6 */
+  --fs-h1:      24px;  --lh-h1:      32px;  --fw-h1:      700;  --ls-h1:  -0.01em;
+  --fs-h2:      20px;  --lh-h2:      28px;  --fw-h2:      600;  --ls-h2:  -0.005em;
+  --fs-h3:      18px;  --lh-h3:      26px;  --fw-h3:      600;
+  --fs-subtitle:18px;  --lh-subtitle:26px;  --fw-subtitle:500;
+  --fs-body:    16px;  --lh-body:    24px;  --fw-body:    400;
+  --fs-micro:   14px;  --lh-micro:   20px;  --fw-micro:   400;
+  --fs-label:   12px;  --lh-label:   16px;  --fw-label:   500;
+  --fs-badge:   12px;  --lh-badge:   16px;  --fw-badge:   600;
+
+  /* editorial display — used on landing / splash, brand voice */
+  --fs-display: 40px;  --lh-display: 44px;  --fw-display: 700;  --ls-display: -0.025em;
+  --fs-display-lg: 56px; --lh-display-lg: 60px;
+
+  /* ---------- SPACING -------------------------------------- */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ---------- RADII ---------------------------------------- */
+  --r-xs:    4px;
+  --r-sm:    8px;
+  --r-md:   12px;   /* default — buttons, inputs, chips */
+  --r-lg:   16px;   /* cards, sheets                     */
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-pill: 9999px;
+
+  /* ---------- SHADOWS (ambient, no harsh drops) ------------ */
+  --shadow-xs:  0 1px 2px 0 rgba(64,46,50,0.04);
+  --shadow-sm:  0 2px 4px -1px rgba(64,46,50,0.05), 0 1px 2px rgba(64,46,50,0.04);
+  --shadow-md:  0 6px 16px -4px rgba(64,46,50,0.08), 0 2px 4px rgba(64,46,50,0.04);
+  --shadow-lg:  0 12px 32px -8px rgba(64,46,50,0.10), 0 4px 8px rgba(64,46,50,0.04);
+  --shadow-pop: 0 16px 48px -12px rgba(103,39,240,0.18);   /* purple glow */
+  --shadow-cta: 0 12px 28px -10px rgba(253,139,31,0.40);   /* orange glow */
+  --shadow-impact: 0 8px 24px -8px rgba(0,196,98,0.25);    /* green glow  */
+
+  /* ---------- MOTION --------------------------------------- */
+  --ease-out:  cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in:   cubic-bezier(0.6, 0.04, 0.7, 0.2);
+  --ease-soft: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --dur-fast:   120ms;
+  --dur-base:   180ms;
+  --dur-slow:   280ms;
+
+  /* ---------- LAYOUT --------------------------------------- */
+  --container-mobile: 390px;
+  --container-tablet: 768px;
+  --container-web:    1280px;
+  --container-wide:   1440px;
+}
+
+/* =============================================================
+   Element bindings
+   ============================================================= */
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-size: var(--fs-h1); line-height: var(--lh-h1);
+  font-weight: var(--fw-h1); letter-spacing: var(--ls-h1);
+  color: var(--foreground); margin: 0;
+}
+h2, .h2 {
+  font-size: var(--fs-h2); line-height: var(--lh-h2);
+  font-weight: var(--fw-h2); letter-spacing: var(--ls-h2);
+  color: var(--foreground); margin: 0;
+}
+h3, .h3 {
+  font-size: var(--fs-h3); line-height: var(--lh-h3);
+  font-weight: var(--fw-h3); color: var(--foreground); margin: 0;
+}
+.display {
+  font-size: var(--fs-display); line-height: var(--lh-display);
+  font-weight: var(--fw-display); letter-spacing: var(--ls-display);
+  color: var(--foreground);
+}
+.display-lg {
+  font-size: var(--fs-display-lg); line-height: var(--lh-display-lg);
+  font-weight: var(--fw-display); letter-spacing: var(--ls-display);
+  color: var(--foreground);
+}
+.subtitle {
+  font-size: var(--fs-subtitle); line-height: var(--lh-subtitle);
+  font-weight: var(--fw-subtitle); color: var(--foreground);
+}
+p, .body {
+  font-size: var(--fs-body); line-height: var(--lh-body);
+  color: var(--foreground); margin: 0;
+}
+.micro {
+  font-size: var(--fs-micro); line-height: var(--lh-micro);
+  color: var(--muted-foreground);
+}
+.label {
+  font-size: var(--fs-label); line-height: var(--lh-label);
+  font-weight: var(--fw-label); color: var(--muted-foreground);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.badge {
+  font-size: var(--fs-badge); line-height: var(--lh-badge);
+  font-weight: var(--fw-badge);
+}
+code, kbd, pre, samp { font-family: var(--font-mono); }

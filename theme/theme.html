@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./colors_and_type.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="./image-slot.js"></script>
+  <script src="./doc-page.js"></script>
+  <style>
+    body { 
+      margin: 0; 
+      font-family: var(--font-sans); 
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    doc-page:not(:defined) { visibility: hidden; }
+    .page { 
+      display: flex; 
+      flex-direction: column; 
+      position: relative; 
+      overflow: hidden; 
+      background: var(--brand-cream); 
+      box-sizing: border-box;
+      padding: 180px 88px; /* Safe Zone para Historias Destacadas */
+    }
+    .blob { position: absolute; border-radius: 50%; filter: blur(2px); }
+    .label { font-size: 28px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* Estilos para impresión y exportación a PDF (Ctrl + P) */
+    @page {
+      size: 1080px 1920px;
+      margin: 0;
+    }
+    @media print {
+      body { background: transparent; padding: 0; }
+      doc-page { display: block !important; }
+      .page { 
+        page-break-after: always !important; 
+        break-after: page !important; 
+      }
+    }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; background: var(--surface-1); padding: 48px 0;">
+
+  <doc-page width="1080px" height="1920px">
+
+    <!-- PAGE 1 — PORTADA -->
+    <section class="page" id="p0" style="background: linear-gradient(180deg, var(--brand-purple) 0%, var(--purple-600) 100%);">
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; box-sizing:border-box; text-align:center; gap:44px;">
+    
+        <div style="display:inline-flex; align-items:center; gap:14px; padding:18px 36px; border-radius:var(--r-pill); background:var(--purple-500); box-shadow:var(--shadow-sm);">
+          <img src="./img/wordpress.png" alt="Logo WordPress" style="height:72px; width:auto; background-color:#ffffff; padding:6px; border-radius:50%; object-fit:contain;">
+          <span style="font-size:26px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--purple-100);">Servicio WordPress</span>
+        </div>
+
+        <h1 style="font-size:80px; line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:var(--on-primary); margin:0;">Themes Ultra-Livianos<br><span style="color:var(--purple-100);">Con UX Personalizado</span></h1>
+
+        <p style="font-size:36px; line-height:1.45; color:var(--purple-100); margin:0; max-width:860px; font-weight:500;">
+          Desarrollo de interfaces de alto rendimiento diseñadas a la medida exacta de tus clientes, optimizadas para cargar en menos de 1 segundo y maximizar ventas.
+        </p>
+      </div>
+    </section>
+
+    <!-- PAGE 2 — HOOK -->
+    <section class="page" id="p1">
+      <div class="blob" style="top:-160px; right:-160px; width:520px; height:520px; background:var(--brand-purple); opacity:0.08;"></div>
+      <div class="blob" style="bottom:-180px; left:-180px; width:560px; height:560px; background:var(--brand-orange); opacity:0.07;"></div>
+      
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:52px; box-sizing:border-box;">
+        <div style="display:inline-flex; align-items:center; gap:16px; padding:22px 40px; border-radius:var(--r-pill); background:var(--surface-0); box-shadow:var(--shadow-md);">
+          <i data-lucide="zap" style="width:38px;height:38px;color:var(--brand-purple);"></i>
+          <span style="font-size:36px; font-weight:800; color:var(--foreground);">0.8s de carga</span>
+        </div>
+
+        <h2 style="font-size:92px; line-height:1.05; font-weight:800; letter-spacing:-0.03em; color:var(--foreground); margin:0;">¿Tu web tarda<br>más de 3 segundos<br>en cargar?</h2>
+
+        <p style="font-size:42px; line-height:1.4; color:var(--muted-foreground); max-width:880px; margin:0; font-weight:500;">
+          Estás perdiendo el <span style="color:var(--brand-orange-shade); font-weight:800;">40% de tus visitas</span> — y de tus ventas — antes de que vean tu contenido.
+        </p>
+      </div>
+
+      <div style="position:relative; display:flex; align-items:center; justify-content:center; gap:16px; color:var(--muted-foreground);">
+        <i data-lucide="chevron-up" style="width:38px;height:38px;"></i>
+        <span style="font-size:30px; font-weight:700; letter-spacing:0.02em;">Desliza para ver la solución</span>
+      </div>
+    </section>
+
+    <!-- PAGE 3 — SOLUCIÓN -->
+    <section class="page" id="p2">
+      <div class="blob" style="top:-140px; left:-140px; width:480px; height:480px; background:var(--brand-green); opacity:0.06;"></div>
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-sizing:border-box;">
+        <div class="label" style="color:var(--brand-purple); margin-bottom:28px;">La solución</div>
+        <h2 style="font-size:80px; line-height:1.1; font-weight:800; letter-spacing:-0.025em; color:var(--foreground); margin:0 0 40px;">No vendo plantillas<br>genéricas pesadas.</h2>
+        <p style="font-size:42px; line-height:1.4; color:var(--muted-foreground); margin:0; max-width:880px; font-weight:500;">
+          Desarrollo <span style="color:var(--foreground);font-weight:800;">Themes de WordPress a medida</span>: ultra-livianos, limpios y diseñados para convertir.
+        </p>
+      </div>
+    </section>
+
+    <!-- PAGE 4 — BENEFICIOS -->
+    <section class="page" id="p3">
+      <div class="blob" style="bottom:-160px; right:-160px; width:520px; height:520px; background:var(--brand-purple); opacity:0.07;"></div>
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-sizing:border-box;">
+        <div class="label" style="color:var(--brand-orange-shade); margin-bottom:28px;">Lo que obtienes</div>
+        <h2 style="font-size:72px; line-height:1.1; font-weight:800; letter-spacing:-0.025em; color:var(--foreground); margin:0 0 64px;">¿Qué diferencia a<br>tus nuevos Themes?</h2>
+
+        <div style="display:flex; flex-direction:column; gap:44px; text-align:left; width:100%;">
+          <div style="display:flex; gap:32px; align-items:flex-start;">
+            <div style="width:88px; height:88px; flex-shrink:0; border-radius:var(--r-lg); background:var(--purple-50); display:flex; align-items:center; justify-content:center;"><i data-lucide="zap" style="width:48px;height:48px;color:var(--brand-purple);"></i></div>
+            <div><div style="font-size:38px; font-weight:800; color:var(--foreground); margin-bottom:8px;">Carga ultra-rápida</div><div style="font-size:32px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">En menos de 1 segundo.</div></div>
+          </div>
+          <div style="display:flex; gap:32px; align-items:flex-start;">
+            <div style="width:88px; height:88px; flex-shrink:0; border-radius:var(--r-lg); background:var(--purple-50); display:flex; align-items:center; justify-content:center;"><i data-lucide="target" style="width:48px;height:48px;color:var(--brand-purple);"></i></div>
+            <div><div style="font-size:38px; font-weight:800; color:var(--foreground); margin-bottom:8px;">UX personalizada</div><div style="font-size:32px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">Diseñada para tus clientes, no para el promedio.</div></div>
+          </div>
+          <div style="display:flex; gap:32px; align-items:flex-start;">
+            <div style="width:88px; height:88px; flex-shrink:0; border-radius:var(--r-lg); background:var(--purple-50); display:flex; align-items:center; justify-content:center;"><i data-lucide="palette" style="width:48px;height:48px;color:var(--brand-purple);"></i></div>
+            <div><div style="font-size:38px; font-weight:800; color:var(--foreground); margin-bottom:8px;">Identidad única</div><div style="font-size:32px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">Sin bloques repetitivos de plantillas genéricas.</div></div>
+          </div>
+          <div style="display:flex; gap:32px; align-items:flex-start;">
+            <div style="width:88px; height:88px; flex-shrink:0; border-radius:var(--r-lg); background:var(--purple-50); display:flex; align-items:center; justify-content:center;"><i data-lucide="trending-up" style="width:48px;height:48px;color:var(--brand-purple);"></i></div>
+            <div><div style="font-size:38px; font-weight:800; color:var(--foreground); margin-bottom:8px;">Escalabilidad</div><div style="font-size:32px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">Código estructurado para crecer con tu negocio.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5 — SERVICIOS -->
+    <section class="page" id="p4">
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-sizing:border-box;">
+        <div class="label" style="color:var(--brand-purple); margin-bottom:28px;">Cómo trabajamos</div>
+        <h2 style="font-size:72px; line-height:1.1; font-weight:800; letter-spacing:-0.025em; color:var(--foreground); margin:0 0 48px;">2 formas de<br>trabajar juntos</h2>
+
+        <div style="display:flex; flex-direction:column; gap:28px; width:100%;">
+          <div style="background:var(--surface-0); border-radius:24px; padding:40px; box-shadow:var(--shadow-md); display:flex; gap:28px; align-items:flex-start; text-align:left;">
+            <div style="width:68px;height:68px;flex-shrink:0;border-radius:var(--r-pill);background:var(--brand-purple);color:var(--on-primary);font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;">1</div>
+            <div><div style="font-size:34px; font-weight:800; color:var(--foreground); margin-bottom:8px;">Theme a medida</div><div style="font-size:28px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">Desarrollo tu sitio desde cero, con código optimizado para tu marca.</div></div>
+          </div>
+          <div style="background:var(--surface-0); border-radius:24px; padding:40px; box-shadow:var(--shadow-md); display:flex; gap:28px; align-items:flex-start; text-align:left;">
+            <div style="width:68px;height:68px;flex-shrink:0;border-radius:var(--r-pill);background:var(--brand-orange);color:var(--on-secondary);font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;">2</div>
+            <div><div style="font-size:34px; font-weight:800; color:var(--foreground); margin-bottom:8px;">Theme listo para usar</div><div style="font-size:28px; line-height:1.4; color:var(--muted-foreground); font-weight:500;">Plantillas premium ligeras, listas para instalar y personalizar.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6 — CTA -->
+    <section class="page" id="p5" style="background: linear-gradient(180deg, var(--brand-purple) 0%, var(--purple-600) 100%);">
+      <div style="position:relative; flex:1; display:flex; flex-direction:column; justify-content:center; box-sizing:border-box; text-align:center; align-items:center; gap:44px;">
+        <div style="display:inline-flex; align-items:center; gap:16px;">
+          <i data-lucide="monitor" style="width:44px;height:44px;color:var(--purple-100);"></i>
+          <i data-lucide="zap" style="width:44px;height:44px;color:var(--purple-100);"></i>
+        </div>
+        
+        <h2 style="font-size:72px; line-height:1.15; font-weight:800; letter-spacing:-0.025em; color:var(--on-primary); margin:0;">Dale a tu proyecto la<br>velocidad y el diseño<br>que se merece.</h2>
+
+        <div style="display:inline-flex; align-items:center; gap:18px; padding:28px 56px; border-radius:var(--r-pill); background:var(--brand-orange); box-shadow:var(--shadow-cta); margin-top:12px;">
+          <i data-lucide="send" style="width:36px;height:36px;color:var(--on-secondary);"></i>
+          <span style="font-size:36px; font-weight:800; color:var(--on-secondary);">Escribe THEME al privado</span>
+        </div>
+
+
+
+      </div>
+    </section>
+
+  </doc-page>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (window.lucide) window.lucide.createIcons();
+  }
+  componentDidUpdate() {
+    if (window.lucide) window.lucide.createIcons();
+  }
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
